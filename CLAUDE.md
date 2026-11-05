@@ -50,3 +50,54 @@ Alle Dokumente in diesem Projekt werden auf Deutsch geführt.
 - Jede inhaltliche Änderung erhält einen eigenen, aussagekräftigen Commit.
 - Vor destruktiven Git-Operationen (reset --hard, force-push etc.) immer erst
   `git status` prüfen und Rückfrage an den Nutzer stellen.
+
+### Pflicht: Branch- und GitHub-Ablauf
+
+**Start einer neuen Aufgabe**
+
+1. Eine neue Aufgabe beginnt nur von einem aktuellen, sauberen Hauptbranch
+   (`master`) aus.
+2. Vor Beginn wird der lokale Hauptbranch mit dem Remote (`origin`)
+   synchronisiert.
+3. Für jede Aufgabe bzw. jedes Thema wird ein eigener Arbeitsbranch vom
+   Hauptbranch angelegt, benannt nach dem Muster `work/<thema>`.
+4. Es wird nie direkt auf dem Hauptbranch gearbeitet und nie der Branch einer
+   vorangegangenen, bereits abgeschlossenen Aufgabe weiterverwendet.
+
+**Abschluss einer Aufgabe**
+
+1. Durchgeführte Arbeit und Repo-Status prüfen.
+2. Änderungen im Arbeitsbranch committen.
+3. Den Arbeitsbranch per `push` nach GitHub übertragen.
+4. Nach dem Push **stoppen** und dem Nutzer melden, dass der Branch bereit
+   zur Prüfung ist.
+
+**Pull Request und Merge**
+
+1. Den Pull Request erstellt ausschließlich der Nutzer selbst.
+2. Den Merge in den Hauptbranch führt ausschließlich der Nutzer selbst durch.
+3. Es ist untersagt, einen Pull Request zu erstellen oder einen Merge
+   durchzuführen – auch nicht über `gh`, es sei denn, der Nutzer fordert dies
+   im Einzelfall ausdrücklich an.
+4. Bis der Nutzer einen erfolgten Merge bestätigt hat, wird die abgeschlossene
+   Arbeit nicht mit dem Hauptbranch synchronisiert und keine neue Aufgabe
+   begonnen.
+
+**Nach bestätigtem Merge**
+
+Nachdem der Nutzer den erfolgten Merge gemeldet hat:
+
+1. Zum Hauptbranch wechseln.
+2. Den aktuellen Stand vom Remote holen.
+3. Den lokalen Hauptbranch per Fast-Forward aktualisieren.
+4. Prüfen, dass lokaler und entfernter Hauptbranch übereinstimmen und das
+   Arbeitsverzeichnis sauber ist.
+5. Den abgeschlossenen lokalen Arbeitsbranch löschen.
+6. Auf dem sauberen, aktuellen Hauptbranch verbleiben.
+
+Das Löschen des entfernten Arbeitsbranches auf GitHub obliegt dem Nutzer,
+falls er dies für nötig hält.
+
+Die nächste Aufgabe beginnt erst nach bestätigtem Merge, Synchronisation des
+Hauptbranchs und Anlage eines neuen Arbeitsbranches vom aktuellen
+Hauptbranch aus.
